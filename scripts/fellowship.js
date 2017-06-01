@@ -137,26 +137,33 @@ forgeTheFellowShip();
 var theBalrog = function () {
    // change the `'Gandalf'` text to `'Gandalf the White'`
    // apply the following style to the element, make the // background 'white', add a grey border
+   $($("li")[0]).text("Gandalf the White");
    $($("li")[0]).css("background-color", "white");
    $($("li")[0]).css("border", "2px solid gray");
-
+   $($("li")[0]).css("color", "gray");
 };
 
 theBalrog();
-/*
+
 //9
 var hornOfGondor = function () {
    // pop up an alert that the horn of gondor has been blown
    // Boromir's been killed by the Uruk-hai!
    // Remove `Boromir` from the Fellowship
 };
+//alert("the horn of gondor has been blown");
+$($("li")[4]).remove();
 
+hornOfGondor();
+
+/*
 //10
 var itsDangerousToGoAlone = function (){
    // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
    // add a div with an id of `'mount-doom'` to `Mordor`
 };
 
+/*
 //11
  var weWantsIt = function () {
    // Create a div with an id of `'gollum'` and add it to Mordor
