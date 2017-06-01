@@ -21,11 +21,20 @@ var body = document.body;
 var section = '<section></section>';
 
 //hobbits
-var frodo = $($('.hobbit')[0]);
-var sam = $($('hobbit')[1]);
-var merry = $($('hobbit')[2]);
-var peregrin = $($('.hobbit')[3]);
-var hobbitList = [frodo, sam, merry, peregrin];
+// var frodo = $($(hobbitss)[0]);
+// var sam = $($(hobbits)[1]);
+// var merry = $($(hobbits)[2]);
+// var peregrin = $($(hobbits)[3]);
+// var hobbitList = [frodo, sam, merry, peregrin];
+
+// //buddies
+// var gandalf = $($(buddies)[0]);
+// var legolas = $($(buddies)[1]);
+// var gimli = $($(buddies)[2]);
+// var strider = $($(buddies)[3]);
+// var boromir = $($(buddies)[4]);
+// var buddyList = $[gandalf, legolas, gimli, strider, boromir];
+
 
 //1
 var makeMiddleEarth = function () {
@@ -51,9 +60,10 @@ var makeHobbits = function () {
    $($("article")[0]).append("<ul></ul>");
    for (var i = 0; i < hobbits.length; i++) {
     $("ul").append("<li></li>");
+    $("ul").attr("id", "hobbits");
     $($("li")[i]).text(hobbits[i]);
    // give each hobbit a class of `hobbit`
-    $("li").attr("class", "hobbits");
+    $("li").attr("class", "hobbit");
    }
  };
 makeHobbits();
@@ -97,38 +107,43 @@ beautifulStranger();
 //6
 var leaveTheShire = function () {
    // assemble the `hobbits` and move them to `rivendell`
-  $('.hobbits').appendTo('.buddies');
+  $('#hobbits').appendTo('#Rivendell');
 };
 leaveTheShire();
 
 //7
-var fellowShipMembers = $("#buddies").add($(".hobbits"));
+
+var fellowShipMembers = $("li");
 
 var forgeTheFellowShip = function () {
    // create a new div called `'the-fellowship'` within `rivendell`
    // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
    // after each character is added make an alert that they // have joined your party
 
-  var theFellowship = $($("article:nth-child(2)")).append("<div></div>");
-  $("div").text("The Fellowship");
-  $("div").attr("id", "the-fellowship");
+  var theFellowship = $("<div></div>");
+  theFellowship.appendTo($("article:nth-child(2)"));
+  theFellowship.text("The Fellowship");
+  theFellowship.attr("id", "the-fellowship");
+  theFellowship.append("<ul></ul");
   for ( var i = 0; i < fellowShipMembers.length; i++) {
-    $("div").append("<ul></ul>");
-    $("ul").append("<li></li>");
-    $($("li")[i]).append(fellowShipMembers[i]);
-    alert(fellowShipMembers[i] + " joined the party");
+    $($("#the-fellowship")).append(fellowShipMembers[i]);
+    //alert($(fellowShipMembers[i]).text() + " joined the party");
   }
 };
 
 forgeTheFellowShip();
 
-/*
 //8
 var theBalrog = function () {
    // change the `'Gandalf'` text to `'Gandalf the White'`
    // apply the following style to the element, make the // background 'white', add a grey border
+   $($("li")[0]).css("background-color", "white");
+   $($("li")[0]).css("border", "2px solid gray");
+
 };
 
+theBalrog();
+/*
 //9
 var hornOfGondor = function () {
    // pop up an alert that the horn of gondor has been blown
